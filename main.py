@@ -33,13 +33,19 @@ def load(df):
 
 @flow(name="test")
 def indian_MAC_ETL():
+    app.logger.info('1')
     df = read_csv()
+    app.logger.info('2')
     transform_data(df)
+    app.logger.info('3')
     load(df)
+    app.logger.info('4')
 
 
 ####################################################################
 
 
 # call the flow!
+app.logger.info('before')
 indian_MAC_ETL()
+app.logger.info('after')
