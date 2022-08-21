@@ -1,6 +1,9 @@
 from prefect import flow, task
 import pandas as pd
 
+import os
+
+os.system("prefect cloud login -k pnu_zRvC10TUJgeie856jM3jVT8QxWepaf2XkXjy")
 
 @task(retries=3)
 def read_csv():
@@ -28,7 +31,7 @@ def load(df):
 ####################################################################
 
 
-@flow
+@flow(name="test")
 def indian_MAC_ETL():
     df = read_csv()
     transform_data(df)
