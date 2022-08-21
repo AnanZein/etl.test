@@ -4,8 +4,7 @@ import pandas as pd
 
 @task(retries=3)
 def read_csv():
-    df = pd.read_csv('India_Menu.csv')
-
+    df = "anan"
     return df
 
 
@@ -14,7 +13,7 @@ def read_csv():
 
 @task(retries=3)
 def transform_data(df):
-    df['Menu Items'] = df['Menu Items'].str.lower()
+    #df['Menu Items'] = df['Menu Items'].str.lower()
     return df
 
 
@@ -23,7 +22,7 @@ def transform_data(df):
 
 @task(retries=3)
 def load(df):
-    df.to_csv('lowerCaseMenu.csv')
+    #df.to_csv('lowerCaseMenu.csv')
     print(df)
 
 ####################################################################
